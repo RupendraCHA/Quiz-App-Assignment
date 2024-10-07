@@ -1,44 +1,44 @@
 const data = [
     {
         id: 1,
-        question: "1. Where was the BRICS summit held in 2014?",
+        question: "1. The function which is called to render HTML to a web page in react?",
         answers: [
             {
-                text: "a. Brazil",
+                text: "a. ReactDOM_render()",
+                correct: false,
+            },
+            {
+                text: "b. render()",
                 correct: true,
             },
             {
-                text: "b. India",
+                text: "c. render_DOM()",
                 correct: false,
             },
             {
-                text: "c. Russia",
-                correct: false,
-            },
-            {
-                text: "d. China",
+                text: "d. DOM_HTML()",
                 correct: false,
             },
         ],
     },
     {
         id: 2,
-        question: "2. Which of these spices is the smallest in size?",
+        question: "2. Total ways of defining variables in ES6 is?",
         answers: [
             {
-                text: "a. Ajwain",
+                text: "a. 1",
+                correct: false,
+            },
+            {
+                text: "b. 2",
+                correct: false,
+            },
+            {
+                text: "c. 3",
                 correct: true,
             },
             {
-                text: "b. Jeera",
-                correct: false,
-            },
-            {
-                text: "c. Saunf",
-                correct: false,
-            },
-            {
-                text: "d. Methi Seeds",
+                text: "d. 4",
                 correct: false,
             },
         ],
@@ -46,70 +46,137 @@ const data = [
     {
         id: 3,
         question:
-            "3. Which battle in 1757 marked the beginning of British occupation in India?",
+            "3. Using which of the following command can prevent default behaviour at in react?",
         answers: [
             {
-                text: "a. Plassey",
+                text: "a. PreventDefault()",
                 correct: true,
             },
             {
-                text: "b. Assaye",
+                text: "b. avoidDefault()",
                 correct: false,
             },
             {
-                text: "c. Buxar",
+                text: "c. revokeDefault()",
                 correct: false,
             },
             {
-                text: "d. Cuddalore",
+                text: "d. None of the above",
                 correct: false,
             },
         ],
     },
     {
         id: 4,
-        question: "4. Which is the second most spoken language of Nepal?",
+        question: "4. What are arbitrary inputs of components in react also known as?",
         answers: [
             {
-                text: "a. Bajjika",
+                text: "a. Elements",
                 correct: false,
             },
             {
-                text: "b. Nepali",
+                text: "b. Keys",
                 correct: false,
             },
             {
-                text: "c. Maithili",
+                text: "c. Props",
                 correct: true,
             },
             {
-                text: "d. Bhojpuri",
+                text: "d. Ref",
                 correct: false,
             },
         ],
     },
     {
         id: 5,
-        question: "5. In which of these two sports is the term ‘free hit’ used?",
+        question: "5. What happens if you render an input element with disabled = {false}?",
         answers: [
             {
-                text: "a. Football, Squash",
-                correct: false,
-            },
-            {
-                text: "b. Badminton, Tennis",
-                correct: false,
-            },
-            {
-                text: "c. Badminton, Cricket",
+                text: "a. It will be rendered as enabled",
                 correct: true,
             },
             {
-                text: "d. Hockey, Cricket",
+                text: "b. It will be rendered as disabled",
+                correct: false,
+            },
+            {
+                text: "c. It will not be rendered at all",
+                correct: false,
+            },
+            {
+                text: "d. None of the above",
                 correct: false,
             },
         ],
     },
+    {
+        id: 6,
+        question: "6. What is Babel?",
+        answers: [
+            {
+                text: "a. Javascript compiler",
+                correct: true,
+            },
+            {
+                text: "b. Javascript transpiler",
+                correct: false,
+            },
+            {
+                text: "c. Javascript interpreter",
+                correct: false,
+            },
+            {
+                text: "d. JSX creator",
+                correct: false,
+            },
+        ],
+    },
+    {
+        id: 7,
+        question: "7. What is ReactJS mainly used for building?",
+        answers: [
+            {
+                text: "a. Database",
+                correct: false,
+            },
+            {
+                text: "b. Connectivity",
+                correct: false,
+            },
+            {
+                text: "c. User Interface",
+                correct: true,
+            },
+            {
+                text: "d. Design Platform",
+                correct: false,
+            },
+        ],
+    },
+    {
+        id: 8,
+        question: "8. Among the corner which is a must-have for every ReactJS component?",
+        answers: [
+            {
+                text: "a. RenderComponent",
+                correct: true,
+            },
+            {
+                text: "b. SetinitialComponent",
+                correct: false,
+            },
+            {
+                text: "c. Render",
+                correct: false,
+            },
+            {
+                text: "d. constructor()",
+                correct: false,
+            },
+        ],
+    },
+
 ];
 
 const prizeMoney = [

@@ -1,29 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import useSound from "use-sound"
-import play from '../../sounds/play.mp3'
-import correct from '../../sounds/correct.mp3'
-import wrong from '../../sounds/wrong.mp3'
+import { toast } from 'react-toastify'
 import "./Quiz.css"
 
 const Quiz = (props) => {
 
-    const { data, questionNumber, setQuestionNumber, setTimeOut } = props
+    const { data, questionNumber, setQuestionNumber,
+        setTimeOut, name } = props
 
     const [question, setQuestion] = useState(null)
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [className, setClassName] = useState("answer")
 
-    const [letsPlay] = useSound(play)
-    const [correctAnswer] = useSound(correct)
-    const [wrongAnswer] = useSound(wrong)
 
     useEffect(() => {
         setQuestion(data[questionNumber - 1])
     }, [data, questionNumber])
-
-    useEffect(() => {
-        letsPlay()
-    }, [letsPlay])
 
     const delay = (duration, callback) => {
         setTimeout(() => {
@@ -40,25 +31,20 @@ const Quiz = (props) => {
     const handleClick = (item) => {
         setSelectedAnswer(item)
         setClassName("answer active")
-
-        // setTimeOut(() => {
-        //     setClassName(item.correct ? "answer correct" : "answer wrong")
-        // }, 3000)
         delay(3000, () => {
             setClassName(item.correct ? "answer correct" : "answer wrong")
         })
 
         delay(5000, () => {
             if (item.correct) {
-                correctAnswer()
                 setQuestionNumber((prev) => prev + 1)
                 setSelectedAnswer(null)
+                toast.success(`Awesome ${name}, You are give Correct answer`)
             }
             else {
-                wrongAnswer()
-                // setQuestionNumber((prev) => prev + 1)
-                // setSelectedAnswer(null)
-                setTimeOut(true)
+                setQuestionNumber((prev) => prev + 1)
+                setSelectedAnswer(null)
+                toast.error(`${name}, You are given wrong answer`)
             }
         })
     }
