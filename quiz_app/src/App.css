@@ -41,6 +41,11 @@
   text-align: center;
   font-size: 28px;
 }
+@media (max-width: 600px) {
+  .completed {
+    width: 85%;
+  }
+}
 .earned {
   width: 80%;
   /* position: relative; */
