@@ -24,7 +24,7 @@ const Start = ({ setName, setTimeOut }) => {
                 </MDBBtn>
             </div>
             <div>
-                <img src='https://res.cloudinary.com/dvxkeeeqs/image/upload/v1728239456/Quiz_App_Qr_Code_ezjhsq.png'
+                <img src='https://res.cloudinary.com/dvxkeeeqs/image/upload/v1728280182/Rupendra_Quiz_app_biqinn.png'
                     alt='QRCodeImageForWebsite' />
                 <p>Scan the QR code to start the Quiz on Mobile/Other Devices</p>
             </div>

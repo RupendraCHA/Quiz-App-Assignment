@@ -103,38 +103,6 @@
 .item.active {
   background-color: teal;
 }
-.money {
-  background-color: #020230;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.money-list {
-  width: 100%;
-  list-style: none;
-  padding: 20px;
-}
-.amount {
-  font-size: 18px;
-  font-weight: 300;
-  text-align: center;
-}
-.timer {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 5px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 10px;
-  left: 100px;
-  font-size: 30px;
-  font-weight: 700;
-  color: white;
-  margin: auto;
-}
 .answered-questions {
   background-color: white;
   padding: 10px;
