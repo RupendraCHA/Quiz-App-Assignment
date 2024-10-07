@@ -1,4 +1,4 @@
-#Working of Application:
+###Working of Application:
     a) First open the website using the URL address
     b) Enter the name to start the Quiz 
     c) Read the question given and select the answer, if answer is right - Green color text will be displayed, else error text will be displayed 
