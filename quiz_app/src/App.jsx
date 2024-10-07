@@ -48,17 +48,17 @@ const App = () => {
                   setTimeOut={setTimeOut}
                   name={name}
                 />
-
+                <p className='answered-questions'>Answered Questions: {questionNumber - 1}/{data.length}</p>
+                <MDBCol md="3" style={{ width: "100%", textAlign: "center", marginBottom: "40px" }}>
+                  <MDBBtn md="3" id='back-btn-exit'
+                    onClick={handleGoBackBtnClick}
+                  >Exit</MDBBtn>
+                  <MDBBtn md="3" id='back-btn-quit'
+                    onClick={handleQuitGame}
+                  >Quit</MDBBtn>
+                </MDBCol>
               </div>
-              <p className='answered-questions'>Answered Questions: {questionNumber - 1}/{data.length}</p>
-              <MDBCol md="3" style={{ width: "100%", textAlign: "center" }}>
-                <MDBBtn md="3" id='back-btn-exit'
-                  onClick={handleGoBackBtnClick}
-                >Exit</MDBBtn>
-                <MDBBtn md="3" id='back-btn-quit'
-                  onClick={handleQuitGame}
-                >Quit</MDBBtn>
-              </MDBCol>
+
             </>}
 
           </div>

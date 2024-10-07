@@ -107,9 +107,9 @@
   background-color: white;
   padding: 10px;
   color: #000;
-  width: auto;
+  width: 60%;
   margin: auto;
-  margin-top: 40px;
   border-radius: 12px;
   font-weight: bold;
+  text-align: center;
 }
