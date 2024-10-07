@@ -1,0 +1,87 @@
+.App {
+  height: 110vh;
+  color: white;
+  background-color: #020230;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url("https://i.pinimg.com/originals/f1/17/23/f11723f9894882a76ce18a626cc5ad69.jpg")
+    center;
+  height: 80vh;
+  background-size: cover;
+}
+.earned {
+  width: 80%;
+  /* position: relative; */
+  margin: auto;
+  text-align: center;
+  margin-top: 150px;
+  color: #000;
+  font-weight: 600;
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 10px;
+}
+#back-btn {
+  width: auto;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.item {
+  display: inline-block;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  width: auto;
+}
+.item.active {
+  background-color: teal;
+}
+.money {
+  background-color: #020230;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.money-list {
+  width: 100%;
+  list-style: none;
+  padding: 20px;
+}
+.amount {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+}
+.timer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin: auto;
+}
+.answered-questions {
+  background-color: white;
+  padding: 10px;
+  color: #000;
+  width: auto;
+  margin: auto;
+  border-radius: 12px;
+  font-weight: bold;
+}

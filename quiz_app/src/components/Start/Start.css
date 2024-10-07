@@ -1,0 +1,17 @@
+.start-container {
+  margin: auto;
+  padding: 15px;
+  /* max-width: 400px; */
+  /* align-content: center; */
+  margin-top: 300px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.start-container img {
+  width: max(22vw, 200px);
+  border-radius: 12px;
+  margin-bottom: 5px;
+}
