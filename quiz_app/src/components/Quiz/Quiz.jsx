@@ -39,7 +39,7 @@ const Quiz = (props) => {
             if (item.correct) {
                 setQuestionNumber((prev) => prev + 1)
                 setSelectedAnswer(null)
-                toast.success(`Awesome ${name}, You are give Correct answer`)
+                toast.success(`Awesome ${name}, You are given Correct answer`)
             }
             else {
                 setQuestionNumber((prev) => prev + 1)
