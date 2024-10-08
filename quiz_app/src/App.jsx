@@ -41,6 +41,9 @@ const App = () => {
       setNameInput(false)
       setName(name)
     }
+    if (name) {
+      setName(name)
+    }
   }, []);
 
   return (<>
