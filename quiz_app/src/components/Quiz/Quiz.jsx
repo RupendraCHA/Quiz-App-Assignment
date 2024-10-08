@@ -10,7 +10,7 @@ const Quiz = (props) => {
     const { data, questionNumber, setQuestionNumber,
         setTimeOut, name } = props
 
-    const qrValue = `http://localhost:3000/?questionIndex=${questionNumber}`;
+    const qrValue = `https://quiz-app-assignment-w8y3.onrender.com/?questionIndex=${questionNumber}`;
 
     const [question, setQuestion] = useState(null)
     const [selectedAnswer, setSelectedAnswer] = useState(null)
