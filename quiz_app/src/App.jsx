@@ -38,8 +38,7 @@ const App = () => {
     if (questionIndex) {
       setQuestionNumber(parseInt(questionIndex, 10));
       setHide(true)
-      setNameInput(true)
-      setName(name)
+      setNameInput(false)
     }
   }, []);
 
