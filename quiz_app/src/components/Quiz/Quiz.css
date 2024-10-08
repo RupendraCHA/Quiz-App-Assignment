@@ -15,6 +15,23 @@
   font-size: 20px;
   margin-top: 40px;
 }
+.qr-code-container {
+  background-color: #000;
+  padding: 10px;
+  border-radius: 12px;
+  margin: 14px;
+}
+.qr-code-container p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+}
+.qr-code {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  /* margin: 14px 0px; */
+}
 .answers {
   width: 70%;
   display: flex;

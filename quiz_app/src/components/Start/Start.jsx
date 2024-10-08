@@ -23,11 +23,6 @@ const Start = ({ setName, setTimeOut }) => {
                     Start Quiz Game
                 </MDBBtn>
             </div>
-            <div>
-                <img src='https://res.cloudinary.com/dvxkeeeqs/image/upload/v1728280182/Rupendra_Quiz_app_biqinn.png'
-                    alt='QRCodeImageForWebsite' />
-                <p>Scan the QR code to start the Quiz on Mobile/Other Devices</p>
-            </div>
         </div>
     )
 }

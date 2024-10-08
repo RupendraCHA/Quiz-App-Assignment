@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MDBRow, MDBCol, MDBBtn } from "mdb-react-ui-kit"
 import "./App.css"
 import Quiz from './components/Quiz/Quiz.jsx'
@@ -20,6 +20,19 @@ const App = () => {
     setTimeOut(true)
   }
 
+  // let questionIndex = 0
+
+  useEffect(() => {
+    // Read the URL parameters to set the initial question index
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const questionIndex = urlParams.get('questionIndex');
+
+    if (questionIndex) {
+      setQuestionNumber(parseInt(questionIndex));
+    }
+  }, []);
+
   return (<>
     <ToastContainer />
     <div className='App'>
@@ -32,7 +45,7 @@ const App = () => {
             {timeOut ? (<>
               <div className='text-center'>
                 <p className='completed'>Quiz ended.</p>
-                <h1 className='earned'>Hey <span>{name}</span>, You attempted {questionNumber - 1}/{data.length} Questions.</h1>
+                <h4 className='earned'>Thank you <span>{name}</span> for taking the Quiz, You are attempted <span>{questionNumber - 1}/{data.length}</span> Questions.</h4>
                 {/* <p className='earned count'>Correct : {rightCount}, Wrong : {wrongCount}</p> */}
                 <MDBBtn id='back-btn'
                   onClick={handleGoBackBtnClick}

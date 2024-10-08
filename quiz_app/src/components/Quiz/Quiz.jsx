@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { toast } from 'react-toastify'
+import QRCode from 'react-qr-code';
 import "./Quiz.css"
 
 const Quiz = (props) => {
 
+
+
     const { data, questionNumber, setQuestionNumber,
         setTimeOut, name } = props
+
+    const qrValue = `http://localhost:3000/?questionIndex=${questionNumber}`;
 
     const [question, setQuestion] = useState(null)
     const [selectedAnswer, setSelectedAnswer] = useState(null)
@@ -39,12 +44,12 @@ const Quiz = (props) => {
             if (item.correct) {
                 setQuestionNumber((prev) => prev + 1)
                 setSelectedAnswer(null)
-                toast.success(`Awesome ${name}, You are given Correct answer`)
+                toast.success(`Congratulations ${name}, You are given CORRECT answer`)
             }
             else {
                 setQuestionNumber((prev) => prev + 1)
                 setSelectedAnswer(null)
-                toast.error(`${name}, You are given wrong answer`)
+                toast.error(`${name}, You are given WRONG answer`)
             }
         })
     }
@@ -54,6 +59,7 @@ const Quiz = (props) => {
             <div className='question'>
                 {question?.question}
             </div>
+
             <div className='answers'>
                 {question?.answers.map((item, index) => (
                     <div key={index} className={selectedAnswer === item ? className : 'answer'}
@@ -62,6 +68,10 @@ const Quiz = (props) => {
                         {item.text}
                     </div>
                 ))}
+            </div>
+            <div className='text-center qr-code-container'>
+                <p>*Scan the QR Code to view the question</p>
+                <QRCode value={qrValue} size={150} className='qr-code' />
             </div>
         </div>
     )
