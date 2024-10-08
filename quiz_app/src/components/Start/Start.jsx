@@ -3,12 +3,14 @@ import { MDBBtn } from "mdb-react-ui-kit"
 
 import "./Start.css"
 
-const Start = ({ setName, setTimeOut }) => {
+const Start = ({ setName, setTimeOut, setShowName, setShowQuestion }) => {
 
     const inputRef = useRef()
 
     const handleClick = (e) => {
         setTimeOut(false)
+        setShowName(false)
+        setShowQuestion(true)
         inputRef.current.value && setName(inputRef.current.value)
     }
     // 

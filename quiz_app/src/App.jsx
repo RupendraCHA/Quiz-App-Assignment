@@ -12,12 +12,20 @@ const App = () => {
   const [name, setName] = useState(null)
   const [questionNumber, setQuestionNumber] = useState(1)
   const [timeOut, setTimeOut] = useState(false)
+  const [showName, setShowName] = useState(true)
+  const [hide, setHide] = useState(true)
+  const [showQuestion, setShowQuestion] = useState(false)
+
   const handleGoBackBtnClick = () => {
-    setName(null)
+    setShowName(true)
+    setHide(true)
+    setShowQuestion(false)
     setQuestionNumber(1)
   }
   const handleQuitGame = () => {
-    setTimeOut(true)
+    setHide(false)
+    setShowName(false)
+    setShowQuestion(false)
   }
 
   // let questionIndex = 0
@@ -29,57 +37,54 @@ const App = () => {
     const questionIndex = urlParams.get('questionIndex');
 
     if (questionIndex) {
-      setQuestionNumber(parseInt(questionIndex));
+      setQuestionNumber(parseInt(questionIndex, 10));
+      setShowQuestion(true)
+      setShowName(false)
+      setHide(true)
     }
   }, []);
 
   return (<>
     <ToastContainer />
     <div className='App'>
-
-      {!name ? (
-        <Start setName={setName} setTimeOut={setTimeOut} />
-      ) : (<MDBRow>
+      {showName && <Start setName={setName} setShowQuestion={setShowQuestion} setTimeOut={setTimeOut} setShowName={setShowName} />}
+      <MDBRow>
         <MDBCol md="12">
           <div className='main'>
-            {timeOut ? (<>
-              <div className='text-center'>
-                <p className='completed'>Quiz ended.</p>
-                <h4 className='earned'>Thank you <span>{name}</span> for taking the Quiz, You are attempted <span>{questionNumber - 1}/{data.length}</span> Questions.</h4>
-                {/* <p className='earned count'>Correct : {rightCount}, Wrong : {wrongCount}</p> */}
-                <MDBBtn id='back-btn'
+            {!hide && <div className='text-center'>
+              <p className='completed'>Quiz ended.</p>
+              <h4 className='earned'>Thank you <span>{name}</span> for taking the Quiz, You are attempted <span>{questionNumber - 1}/{data.length}</span> Questions.</h4>
+              {/* <p className='earned count'>Correct : {rightCount}, Wrong : {wrongCount}</p> */}
+              <MDBBtn id='back-btn'
+                onClick={handleGoBackBtnClick}
+              >Play Again</MDBBtn>
+            </div>}
+            {showQuestion && <div style={{ height: "100%" }}>
+              {!showName && <h2 className='player'>Hi <span>{name}</span>, Welcome to the Quiz: </h2>}
+              <Quiz
+                data={data}
+                questionNumber={questionNumber}
+                setQuestionNumber={setQuestionNumber}
+                setTimeOut={setTimeOut}
+                name={name}
+              />
+              <p className='answered-questions'>Answered Questions: {questionNumber - 1}/{data.length}</p>
+              <MDBCol md="3" style={{ width: "100%", textAlign: "center", marginBottom: "40px" }}>
+                <MDBBtn md="3" id='back-btn-exit'
                   onClick={handleGoBackBtnClick}
-                >Play Again</MDBBtn>
-              </div>
-            </>) : <>
-              <div style={{ height: "100%" }}>
-                <h2 className='player'>Hi <span>{name}</span>, Welcome to the Quiz: </h2>
-                <Quiz
-                  data={data}
-                  questionNumber={questionNumber}
-                  setQuestionNumber={setQuestionNumber}
-                  setTimeOut={setTimeOut}
-                  name={name}
-                />
-                <p className='answered-questions'>Answered Questions: {questionNumber - 1}/{data.length}</p>
-                <MDBCol md="3" style={{ width: "100%", textAlign: "center", marginBottom: "40px" }}>
-                  <MDBBtn md="3" id='back-btn-exit'
-                    onClick={handleGoBackBtnClick}
-                  >Exit</MDBBtn>
-                  <MDBBtn md="3" id='back-btn-quit'
-                    onClick={handleQuitGame}
-                  >Quit</MDBBtn>
-                </MDBCol>
-              </div>
+                >Exit</MDBBtn>
+                <MDBBtn md="3" id='back-btn-quit'
+                  onClick={handleQuitGame}
+                >Quit</MDBBtn>
+              </MDBCol>
+            </div>}
 
-            </>}
 
           </div>
 
         </MDBCol>
 
-      </MDBRow>)
-      }
+      </MDBRow>
 
     </div >
   </>
