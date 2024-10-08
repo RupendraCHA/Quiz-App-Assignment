@@ -33,11 +33,13 @@ const App = () => {
     const urlParams = new URLSearchParams(window.location.search);
 
     const questionIndex = urlParams.get('questionIndex');
+    const name = urlParams.get('name');
 
     if (questionIndex) {
       setQuestionNumber(parseInt(questionIndex, 10));
       setHide(true)
       setNameInput(true)
+      setName(name)
     }
   }, []);
 

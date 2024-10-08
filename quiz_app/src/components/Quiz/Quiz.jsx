@@ -10,7 +10,7 @@ const Quiz = (props) => {
     const { data, questionNumber, setQuestionNumber,
         setTimeOut, name } = props
 
-    const qrValue = `https://quizapp1rb.onrender.com//?questionIndex=${questionNumber}`;
+    const qrValue = `https://quizapp1rb.onrender.com//?questionIndex=${questionNumber}&name${name}`;
 
     const [question, setQuestion] = useState(null)
     const [selectedAnswer, setSelectedAnswer] = useState(null)
