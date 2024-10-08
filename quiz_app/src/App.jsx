@@ -19,10 +19,11 @@ const App = () => {
     setHide(true)
     setQuestionNumber(1)
     setNameInput(true)
+    setName(null)
   }
   const handleQuitGame = () => {
     setHide(false)
-    setName(name)
+    // setName(null)
   }
 
   // let questionIndex = 0
@@ -35,9 +36,8 @@ const App = () => {
 
     if (questionIndex) {
       setQuestionNumber(parseInt(questionIndex, 10));
-      setName(name)
       setHide(true)
-      setNameInput(false)
+      setNameInput(true)
     }
   }, []);
 
@@ -56,7 +56,7 @@ const App = () => {
               >Play Again</MDBBtn>
             </div>}
             {hide && (<>
-              {showNameInput && <Start setName={setName} setTimeOut={setTimeOut} setNameInput={setNameInput} />}
+              {showNameInput && <Start setName={setName} name={name} setTimeOut={setTimeOut} setNameInput={setNameInput} />}
               {!showNameInput && <div style={{ height: "100%" }}>
                 <h2 className='player'>Hi <span>{name}</span>, Welcome to the Quiz: </h2>
                 <Quiz

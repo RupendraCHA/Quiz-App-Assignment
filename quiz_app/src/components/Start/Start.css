@@ -13,3 +13,9 @@
   border-radius: 12px;
   margin-bottom: 5px;
 }
+.start-container input {
+  font-weight: bold;
+  color: black;
+  padding: 6px;
+  outline: none;
+}
